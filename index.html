@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.4.1/dist/css/bootstrap.min.css" integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous">
+<!-- Latest compiled and minified JavaScript -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@3.4.1/dist/js/bootstrap.min.js" integrity="sha384-aJ21OjlMXNL5UyIl/XNwTMqvzeRMZH2w8c5cRVpzpU8Y5bApTppSuUkhZXN0VxHd" crossorigin="anonymous"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+          .Fhover-area {
+    transition: transform 0.3s ease; /* Smooth transition for scaling */
+    cursor: pointer; /* Pointer cursor on hover area */
+}
+
+.Fhover-area:hover {
+    transform: scale(1.05); /* Enlarge the element on hover */
+}
+         .Mhover-area {
+    transition: transform 0.3s ease; /* Smooth transition for scaling */
+    cursor: pointer; /* Pointer cursor on hover area */
+}
+
+.Mhover-area:hover {
+    transform: scale(1.05); /* Enlarge the element on hover */
+}
+        .hover-area {
+    transition: transform 0.3s ease; /* Smooth transition for scaling */
+    cursor: pointer; /* Pointer cursor on hover area */
+}
+
+.hover-area:hover {
+    transform: scale(1.05); /* Enlarge the element on hover */
+}
+        
+        html, body {
+            height: 100%; /* Ensure the height is 100% of the viewport */
+            margin: 0; /* Remove default margin */
+        }
+
+        body {
+            background: linear-gradient(to bottom, #000000, #434343); /* Black to dark gray gradient */
+            background-repeat: no-repeat; /* Prevent background from repeating */
+            background-size: cover; /* Cover the entire page */
+        }
+        #im{
+            border: 10px solid #1c47be; /* Solid border with color */
+            border-radius: 50%; /* Optional: Makes the image circular */
+
+        }
+        #aa{
+       color:white;
+
+
+}
+   html {
+            scroll-behavior: smooth; /* This enables smooth scrolling for the whole page */
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <a class="navbar-brand" href="#">YABOWERK</a>
+            </div>
+            <ul class="nav navbar-nav navbar-right"> <!-- Added navbar-right here -->
+                <li class="active"><a href="#myCarousel">Home</a></li>
+                <li><a href="#about">ABOUT ME</a></li>
+                <li><a href="#skills">SKILLS</a></li>
+                <li><a href="#por">MY PORTFOLIO</a></li>
+                <li><a href="#contact">CONTACT INFO</a></li>
+            </ul>
+        </div>
+    </nav>
+
+      <div id="myCarousel" class="carousel slide" data-ride="carousel" data-interval="2000">
+        <div class="carousel-inner">
+            <div class="item active">
+                <img src="img/bezos.png" alt="First Slide" style="filter: brightness(50%);"> <!-- Decrease brightness -->
+            </div>
+            <div class="item">
+                <img class="img-responsive" src="img/yonas.png" alt="Second Slide" style="filter: brightness(50%);"> <!-- Decrease brightness -->
+            </div>
+            <div class="item">
+                <img src="img/react fi.png" alt="Third Slide" style="filter: brightness(50%);"> <!-- Decrease brightness -->
+            </div>
+            <div class="item">
+                <img src="img/mike.png" alt="Fourth Slide" style="filter: brightness(50%);"> <!-- Decrease brightness -->
+            </div>
+            <div class="item">
+                <img src="img/web.png" alt="Sixth Slide" style="filter: brightness(50%);"> <!-- Decrease brightness -->
+            </div>
+            <div class="item">
+                <img src="img/ecomm.png" alt="Seventh Slide" style="filter: brightness(50%);"> <!-- Decrease brightness -->
+            </div>
+        </div>
+    
+        <!-- Fixed text overlay for all slides -->
+        <div class="carousel-caption fixed-caption">
+            <h1>Hello i am <strong class="highlight">YABOWERK</strong> </h1>
+            <div id="text"></div> <!-- This is where the text will appear -->
+
+            <script>
+                const text = "A Web Developer and Thumbnail Designer."; // The text to display
+                let index = 0; // Initialize index to track the current character
+            
+                function typeLetter() {
+                    if (index < text.length) { // Check if there are more characters to display
+                        document.getElementById("text").innerHTML += text.charAt(index); // Append the next character
+                        index++; // Move to the next character
+                        setTimeout(typeLetter, 100); // Call this function again after 100 ms
+                    } else {
+                        // When finished, clear the text and reset index after a delay
+                        setTimeout(() => {
+                            document.getElementById("text").innerHTML = ""; // Clear the text
+                            index = 0; // Reset index
+                            typeLetter(); // Start typing again
+                        }, 1000); // Delay before restarting (1 second)
+                    }
+                }
+            
+                typeLetter(); // Start the typing effect
+            </script>
+        </div>
+    
+        <!-- Controls -->
+        <a class="left carousel-control" href="#myCarousel" data-slide="prev">
+            <span class="glyphicon glyphicon-chevron-left"></span>
+        </a>
+        <a class="right carousel-control" href="#myCarousel" data-slide="next">
+            <span class="glyphicon glyphicon-chevron-right"></span>
+        </a>
+    </div>
+    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    
+    <style>
+    .carousel-caption {
+        position: absolute;
+        top: 50%; /* Center vertically */
+        left: 50%; /* Center horizontally */
+        transform: translate(-50%, -50%); /* Adjust for centering */
+        color: rgb(255, 255, 255); /* Default text color */
+        text-align: center; /* Center text */
+    }
+    
+    .fixed-caption {
+        z-index: 10; /* Ensure text is above images */
+    }
+    
+    .highlight {
+        color: rgb(247, 8, 255); /* Change this to your desired color */
+        font-weight: bold; /* Make the text bold */
+    }
+    </style>
+
+
+<div id="about"class="container-fluid hover-area"> <!-- Use a full-width container to stretch -->
+    <div class="row" class="fixed-row"style="background-color:lightblue; border-radius: 10px; padding: 10px; margin: 30px 0;">
+        <center><h1 style="text-decoration: underline; text-decoration-color: rgb(3, 28, 255);">ABOUT ME</h1></center>
+       <div class="col-sm-4"> <img id="im"class=" img-responsive img-fluid"src="img/bushra.webp"></div>
+       <div class="col-sm-8">
+        <div class="panel panel-primary">
+            <div class="panel-heading">
+            </div>
+            <div class="panel-body">
+                <h3  class="lead">I am front-end developer and thumbnail designer.</h3><h3  class="lead">Currently i am student at debre berhan university studying Electrical and Computer Engineering. As a web developer, I love crafting user-friendly and visually appealing websites that not only meet client needs but also provide an engaging experience for users.</h3><h3  class="lead">My skills in HTML, CSS,JavaScript and Bootstrap-3 enable me to bring ideas to life on the web, while my keen eye for design ensures that every project stands out.</h3> <h3  class="lead">In addition to web development, I am also a thumbnail designer.I enjoy creating eye-catching high CTR thumbnails that capture attention and convey messages effectively. Whether it’s for YouTube videos or social media content, I strive to make every thumbnail not just attractive but also a true representation of the content it represents.  </h3>
+            </div>
+        </div>
+    </div>
+            
+        </div>
+    </div>
+</div>
+</div>
+<div id="skills"class="container-fluid Mhover-area"> <!-- Use a full-width container to stretch -->
+    <div class="row" class="fixed-row"style="background-color:lightgreen; border-radius: 10px; padding: 10px; margin: 30px 0;">
+        <center><h1 style="text-decoration: underline; text-decoration-color: rgb(3, 28, 255);">SKILLS</h1></center>
+        <h4 class="lead" style="margin-left: 350px;">Some introduction to my skill abilities and value is below.</h4>
+       <div class="col-sm-6"><h4 STYLE="margin-left: 265PX;">HTML</h4><div style="pointer-events: none;">
+        <input type="range" min="0" max="100" value="80" 
+               style="accent-color: rgb(38, 228, 133); width: 600px;">
+    </div>
+</div>
+<div  class="col-sm-6"><h4 STYLE="margin-left: 265PX;">CSS</h4><div style="pointer-events: none;">
+    <input type="range" min="0" max="100" value="35" 
+           style="accent-color: rgb(38, 228, 133); width: 600px;">
+</div>
+</div>
+        
+
+<div class="container-fluid"> <!-- Use a full-width container to stretch -->
+    
+    <div class="row" class="fixed-row"style="background-color:lightgreen; border-radius: 10px; padding: 10px; margin: 88px 0;">
+       <div class="col-sm-6"><h4 STYLE="margin-left: 225PX;">BOOTSTRAP-3</h4><div style="pointer-events: none;">
+        <input type="range" min="0" max="100" value="55" 
+               style="accent-color: rgb(38, 228, 133); width: 600px;">
+    </div>
+</div>
+<div class="col-sm-6"><h4 STYLE="margin-left: 265PX;">PHOTOSHOP</h4><div style="pointer-events: none;">
+    <input type="range" min="0" max="100" value="95" 
+           style="accent-color: rgb(38, 228, 133); width: 600px;">
+</div>
+</div>
+      
+    </div>
+</div>
+</div>
+
+
+<div id="por" class="container-fluid Fhover-area"> <!-- Use a full-width container to stretch -->
+    <div class="row" class="fixed-row"style="background-color:lightgrey; border-radius: 10px; padding: 10px; margin: 30px 0;">
+        <center><h1 style="text-decoration: underline; text-decoration-color: rgb(3, 28, 255);">MY PREVIOUS PROJECTS</h1></center>
+         <h4 class="lead" style="margin-left: 350px;">Check out my previous web development and thumbnail projects.</h4>
+         <div class="col-sm-4"><img class="img-responsive img-thumbnail"src="img/web2.png"></div>
+         <div class="col-sm-4"><img class="img-responsive img-thumbnail"src="img/ecomm.png"></div>
+         <div class="col-sm-4"><img class="img-responsive img-thumbnail"src="img/react fi.png"></div>
+      
+    </div>
+    <div class="row" class="fixed-row"style="background-color:GREY; border-radius: 10px; padding: 10px; margin: 30px 0;">
+        <div class="col-sm-4"><img class="img-responsive img-thumbnail"src="img/BELMAR.png"></div>
+        <div class="col-sm-4"><img class="img-responsive img-thumbnail"src="img/yonas.png"></div>
+        <div class="col-sm-4"><img class="img-responsive img-thumbnail"src="img/tate.png"></div>
+    </div>
+    <div class="row" class="fixed-row"style="background-color:GREY; border-radius: 10px; padding: 10px; margin: 30px 0;">
+        <div class="col-sm-4"><img class="img-responsive img-thumbnail"src="img/GEOPO.png"></div>
+        <div class="col-sm-4"><img class="img-responsive img-thumbnail"src="img/mike.png"></div>
+        <div class="col-sm-4"><img class="img-responsive img-thumbnail"src="img/mon.jpg"></div>
+    </div>
+</div>
+
+<div id="contact"class="container-fluid">
+    <div class="row" class="fixed-row"style="background-color:orange; border-radius: 10px; padding: 10px; margin: 1px 0;">
+    <h2 id="skills" class="text-center"style="margin-bottom: 25PX;;"><strong>Contact Me.</strong></h2>
+    <div class="row text-center">
+        <div class="col-xs-6 col-md-3">
+            <a href="https://github.com/Yabowerk/Yabowerk/tree/main" target="_blank">
+                <img src="https://img.icons8.com/ios-filled/50/000000/github.png" alt="GitHub" />
+            </a>
+        </div>
+        <div class="col-xs-6 col-md-3">
+            <a href="https://t.me/yourusername" target="_blank">
+                <img src="https://img.icons8.com/ios-filled/50/000000/telegram-app.png" alt="Telegram" />
+            </a>
+        </div>
+        <div class="col-xs-6 col-md-3">
+            <a href="https://facebook.com/yourusername" target="_blank">
+                <img src="https://img.icons8.com/ios-filled/50/000000/facebook-new.png" alt="Facebook" />
+            </a>
+        </div>
+        <div class="col-xs-6 col-md-3">
+            <a href="mailto:youremail@example.com">
+                <img src="https://img.icons8.com/ios-filled/50/000000/email.png" alt="Email" />
+            </a>
+        </div>
+       <STRONG><center STYLE="font-size:18px;">2017EC/2024GC &COPY</center></STRONG> 
+    </div>
+</div>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+</body>
+</html>
